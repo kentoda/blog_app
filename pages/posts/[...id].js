@@ -31,7 +31,7 @@ export async function getStaticPaths() {
 
 // buildする時にページのコンテンツは何なのか,そのデータはどこにあるのかをgetStaticProps を使い取得する
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+  const postData = await getPostData(params.id.join('/'))
   return {
     props: {
       postData
